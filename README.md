@@ -1,0 +1,2 @@
+# bing
+bing rewards script
