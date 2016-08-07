@@ -7,7 +7,7 @@ import webbrowser, time
 
 class manipulateBing:
 	def __init__(self):
-		chromedriver = "/Users/johnkeck/Documents/Code/Python/chromedriver"
+		chromedriver = "..."
 		os.environ["webdriver.chrome.driver"] = chromedriver
 		self.browser = webdriver.Chrome(chromedriver)
 
