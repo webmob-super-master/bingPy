@@ -1,11 +1,24 @@
 #! /usr/bin/env python3
-
-from selenium import webdriver
-import bingCredentials as bing
+#Built-ins
 import os
 import webbrowser, time
 
+#Externals imports
+from selenium import webdriver
+
+#Internal imports
+import bingCredentials as bing
+
+
 class manipulateBing:
+	"""
+	Creates a Chrome webdriver instance and uses it to search Bing
+	
+	Args: None
+	
+	Usage: Call login method then search method to complete 30 searches for that account.  Logout when finished.
+	"""
+	
 	def __init__(self):
 		chromedriver = "..."
 		os.environ["webdriver.chrome.driver"] = chromedriver
@@ -33,13 +46,3 @@ class manipulateBing:
 			searchTerm.append(str(i))
 			time.sleep(1)
 			self.browser.get('https://www.bing.com/search?q=' + searchTerm[i])
-
-def main():
-	for i in range(1,4):
-		chrome = manipulateBing()
-		chrome.login(i)
-		time.sleep(10)
-		chrome.search()
-		chrome.logout()
-
-main()
